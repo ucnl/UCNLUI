@@ -34,7 +34,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>ucnlkey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -99,9 +100,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ucnlkey.pfx" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Controls\LatitudeEditor.resx">
       <DependentUpon>LatitudeEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,7 +118,13 @@
     <EmbeddedResource Include="Dialogs\SalinityDialog.resx">
       <DependentUpon>SalinityDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SalinityDialog.ru.resx">
+      <DependentUpon>SalinityDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\SoundSpeedDialog.resx">
+      <DependentUpon>SoundSpeedDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SoundSpeedDialog.ru.resx">
       <DependentUpon>SoundSpeedDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
