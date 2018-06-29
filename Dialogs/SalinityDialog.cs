@@ -180,5 +180,50 @@ namespace UCNLUI.Dialogs
         }
         
         #endregion               
+
+        private void SalinityDialog_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void latCaptionLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LonCaptionLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void latLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lonLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salinityCaptionLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void okBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salinityLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

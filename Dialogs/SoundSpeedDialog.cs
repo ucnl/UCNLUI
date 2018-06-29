@@ -6,7 +6,7 @@ namespace UCNLUI.Dialogs
 {
     public partial class SoundSpeedDialog : Form
     {
-        enum presets : int
+        public enum presets : int
         {
             freshWater = 0,
             seaWater = 1,
@@ -28,7 +28,7 @@ namespace UCNLUI.Dialogs
             }
         }
 
-        private presets Preset
+        public presets Preset
         {
             get
             {
@@ -40,7 +40,7 @@ namespace UCNLUI.Dialogs
             }
         }
 
-        private double Temperature
+        public double Temperature
         {
             get
             {
@@ -52,7 +52,7 @@ namespace UCNLUI.Dialogs
             }
         }
 
-        private double Pressure
+        public double Pressure
         {
             get
             {
@@ -64,7 +64,7 @@ namespace UCNLUI.Dialogs
             }
         }
 
-        private double Salinity
+        public double Salinity
         {
             get
             {
@@ -161,8 +161,8 @@ namespace UCNLUI.Dialogs
                 case presets.seaWater:
                     {
                         // sea water
-                        Salinity = 35;
-                        Pressure = 0.1;                       
+                        //Salinity = 35;
+                        //Pressure = 0.1;                       
                         tempEdit.Enabled = true;
                         pressureEdit.Enabled = true;
                         salinityEdit.Enabled = true;

@@ -40,9 +40,11 @@
             this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.okBtn.Location = new System.Drawing.Point(14, 86);
+            this.okBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.okBtn.Location = new System.Drawing.Point(19, 110);
+            this.okBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.okBtn.Name = "okBtn";
-            this.okBtn.Size = new System.Drawing.Size(75, 23);
+            this.okBtn.Size = new System.Drawing.Size(100, 37);
             this.okBtn.TabIndex = 0;
             this.okBtn.Text = "OK";
             this.okBtn.UseVisualStyleBackColor = true;
@@ -52,9 +54,11 @@
             this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBtn.Location = new System.Drawing.Point(113, 86);
+            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelBtn.Location = new System.Drawing.Point(151, 110);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(100, 37);
             this.cancelBtn.TabIndex = 1;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -62,30 +66,35 @@
             // numEdit
             // 
             this.numEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numEdit.Location = new System.Drawing.Point(12, 45);
+            this.numEdit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numEdit.Location = new System.Drawing.Point(16, 55);
+            this.numEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numEdit.Name = "numEdit";
-            this.numEdit.Size = new System.Drawing.Size(120, 20);
+            this.numEdit.Size = new System.Drawing.Size(160, 30);
             this.numEdit.TabIndex = 2;
             // 
             // hintLbl
             // 
             this.hintLbl.AutoSize = true;
-            this.hintLbl.Location = new System.Drawing.Point(12, 29);
+            this.hintLbl.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.hintLbl.Location = new System.Drawing.Point(15, 28);
+            this.hintLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hintLbl.Name = "hintLbl";
-            this.hintLbl.Size = new System.Drawing.Size(24, 13);
+            this.hintLbl.Size = new System.Drawing.Size(40, 23);
             this.hintLbl.TabIndex = 3;
             this.hintLbl.Text = "hint";
             // 
             // NumEditDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(200, 121);
+            this.ClientSize = new System.Drawing.Size(267, 162);
             this.Controls.Add(this.hintLbl);
             this.Controls.Add(this.numEdit);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.okBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NumEditDialog";
             this.Text = "IntEditDialog";
             ((System.ComponentModel.ISupportInitialize)(this.numEdit)).EndInit();

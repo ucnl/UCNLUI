@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoundSpeedDialog));
             this.okBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,65 +50,44 @@
             // 
             // okBtn
             // 
-            this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.okBtn, "okBtn");
             this.okBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.okBtn.Location = new System.Drawing.Point(185, 248);
             this.okBtn.Name = "okBtn";
-            this.okBtn.Size = new System.Drawing.Size(75, 23);
-            this.okBtn.TabIndex = 0;
-            this.okBtn.Text = "OK";
             this.okBtn.UseVisualStyleBackColor = true;
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.cancelBtn, "cancelBtn");
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBtn.Location = new System.Drawing.Point(292, 248);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelBtn.TabIndex = 1;
-            this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 23);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Configurations";
             // 
             // preConfigCbx
             // 
+            resources.ApplyResources(this.preConfigCbx, "preConfigCbx");
             this.preConfigCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.preConfigCbx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.preConfigCbx.FormattingEnabled = true;
             this.preConfigCbx.Items.AddRange(new object[] {
-            "Fresh water",
-            "Sea water",
-            "Direct measurement"});
-            this.preConfigCbx.Location = new System.Drawing.Point(103, 20);
+            resources.GetString("preConfigCbx.Items"),
+            resources.GetString("preConfigCbx.Items1"),
+            resources.GetString("preConfigCbx.Items2")});
             this.preConfigCbx.Name = "preConfigCbx";
-            this.preConfigCbx.Size = new System.Drawing.Size(154, 21);
-            this.preConfigCbx.TabIndex = 3;
             this.preConfigCbx.SelectedIndexChanged += new System.EventHandler(this.preConfigCbx_SelectedIndexChanged);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 68);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Water temperature, C";
             // 
             // tempEdit
             // 
+            resources.ApplyResources(this.tempEdit, "tempEdit");
             this.tempEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tempEdit.Location = new System.Drawing.Point(160, 66);
             this.tempEdit.Maximum = new decimal(new int[] {
             30,
             0,
@@ -119,24 +99,19 @@
             0,
             -2147483648});
             this.tempEdit.Name = "tempEdit";
-            this.tempEdit.Size = new System.Drawing.Size(97, 20);
-            this.tempEdit.TabIndex = 5;
             this.tempEdit.ValueChanged += new System.EventHandler(this.tempEdit_ValueChanged);
             // 
             // pressureEdit
             // 
+            resources.ApplyResources(this.pressureEdit, "pressureEdit");
             this.pressureEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pressureEdit.DecimalPlaces = 1;
-            this.pressureEdit.Enabled = false;
-            this.pressureEdit.Location = new System.Drawing.Point(160, 92);
             this.pressureEdit.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             65536});
             this.pressureEdit.Name = "pressureEdit";
-            this.pressureEdit.Size = new System.Drawing.Size(97, 20);
-            this.pressureEdit.TabIndex = 7;
             this.pressureEdit.Value = new decimal(new int[] {
             1,
             0,
@@ -146,42 +121,31 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 94);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Hydrostatic pressure, MPa";
             // 
             // salinityEdit
             // 
+            resources.ApplyResources(this.salinityEdit, "salinityEdit");
             this.salinityEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.salinityEdit.DecimalPlaces = 1;
-            this.salinityEdit.Enabled = false;
-            this.salinityEdit.Location = new System.Drawing.Point(160, 118);
             this.salinityEdit.Maximum = new decimal(new int[] {
             40,
             0,
             0,
             0});
             this.salinityEdit.Name = "salinityEdit";
-            this.salinityEdit.Size = new System.Drawing.Size(97, 20);
-            this.salinityEdit.TabIndex = 9;
             this.salinityEdit.ValueChanged += new System.EventHandler(this.salinityEdit_ValueChanged);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 120);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Salinity, PSU";
             // 
             // soundSpeedEdit
             // 
+            resources.ApplyResources(this.soundSpeedEdit, "soundSpeedEdit");
             this.soundSpeedEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.soundSpeedEdit.Location = new System.Drawing.Point(160, 186);
             this.soundSpeedEdit.Maximum = new decimal(new int[] {
             2000,
             0,
@@ -193,8 +157,6 @@
             0,
             0});
             this.soundSpeedEdit.Name = "soundSpeedEdit";
-            this.soundSpeedEdit.Size = new System.Drawing.Size(97, 20);
-            this.soundSpeedEdit.TabIndex = 11;
             this.soundSpeedEdit.Value = new decimal(new int[] {
             1300,
             0,
@@ -203,30 +165,20 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 188);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Speed of sound, m/s";
             // 
             // getFromBaseBtn
             // 
-            this.getFromBaseBtn.AutoSize = true;
-            this.getFromBaseBtn.Enabled = false;
-            this.getFromBaseBtn.Location = new System.Drawing.Point(272, 120);
+            resources.ApplyResources(this.getFromBaseBtn, "getFromBaseBtn");
             this.getFromBaseBtn.Name = "getFromBaseBtn";
-            this.getFromBaseBtn.Size = new System.Drawing.Size(94, 13);
-            this.getFromBaseBtn.TabIndex = 12;
             this.getFromBaseBtn.TabStop = true;
-            this.getFromBaseBtn.Text = "Get from database";
             this.getFromBaseBtn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.getFromBaseBtn_LinkClicked);
             // 
             // SoundSpeedDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 283);
             this.Controls.Add(this.getFromBaseBtn);
             this.Controls.Add(this.soundSpeedEdit);
             this.Controls.Add(this.label5);
@@ -242,7 +194,6 @@
             this.Controls.Add(this.okBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SoundSpeedDialog";
-            this.Text = "SoundSpeedDialog";
             ((System.ComponentModel.ISupportInitialize)(this.tempEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pressureEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salinityEdit)).EndInit();
