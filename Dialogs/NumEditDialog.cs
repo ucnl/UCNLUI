@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace UCNLUI.Dialogs
@@ -77,8 +78,8 @@ namespace UCNLUI.Dialogs
             {
                 numEdit.Minimum = Convert.ToDecimal(value);
             }
-        }        
-
+        }
+        
         #endregion
 
         #region Constructor
@@ -86,6 +87,24 @@ namespace UCNLUI.Dialogs
         public NumEditDialog()
         {
             InitializeComponent();
+        }
+
+        #endregion
+
+        #region Methods
+
+        public void SetButtonsCaseStyle(bool isUpper)
+        {
+            if (isUpper)
+            {
+                okBtn.Text = okBtn.Text.ToUpperInvariant();
+                cancelBtn.Text = cancelBtn.Text.ToUpperInvariant();
+            }
+            else
+            {
+                okBtn.Text = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(okBtn.Text);
+                cancelBtn.Text = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(cancelBtn.Text);
+            }
         }
 
         #endregion

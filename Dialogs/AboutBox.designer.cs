@@ -32,11 +32,11 @@
             this.okBtn = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.tableLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.descriptionTxb = new System.Windows.Forms.TextBox();
             this.titleLbl = new System.Windows.Forms.Label();
             this.versionLbl = new System.Windows.Forms.Label();
             this.copyrightLbl = new System.Windows.Forms.Label();
             this.weblinkLbl = new System.Windows.Forms.LinkLabel();
+            this.descriptionTxb = new System.Windows.Forms.RichTextBox();
             this.logoBox = new System.Windows.Forms.PictureBox();
             this.mainPanel.SuspendLayout();
             this.tableLayout.SuspendLayout();
@@ -56,9 +56,9 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainPanel.Controls.Add(this.tableLayout);
             this.mainPanel.Controls.Add(this.logoBox);
             this.mainPanel.Location = new System.Drawing.Point(12, 12);
@@ -68,16 +68,16 @@
             // 
             // tableLayout
             // 
-            this.tableLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayout.ColumnCount = 1;
             this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayout.Controls.Add(this.descriptionTxb, 0, 4);
             this.tableLayout.Controls.Add(this.titleLbl, 0, 0);
             this.tableLayout.Controls.Add(this.versionLbl, 0, 1);
             this.tableLayout.Controls.Add(this.copyrightLbl, 0, 2);
             this.tableLayout.Controls.Add(this.weblinkLbl, 0, 3);
+            this.tableLayout.Controls.Add(this.descriptionTxb, 0, 4);
             this.tableLayout.Location = new System.Drawing.Point(222, 3);
             this.tableLayout.Name = "tableLayout";
             this.tableLayout.RowCount = 5;
@@ -88,18 +88,6 @@
             this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tableLayout.Size = new System.Drawing.Size(329, 310);
             this.tableLayout.TabIndex = 1;
-            // 
-            // descriptionTxb
-            // 
-            this.descriptionTxb.BackColor = System.Drawing.Color.White;
-            this.descriptionTxb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.descriptionTxb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.descriptionTxb.Location = new System.Drawing.Point(3, 95);
-            this.descriptionTxb.Multiline = true;
-            this.descriptionTxb.Name = "descriptionTxb";
-            this.descriptionTxb.ReadOnly = true;
-            this.descriptionTxb.Size = new System.Drawing.Size(323, 212);
-            this.descriptionTxb.TabIndex = 0;
             // 
             // titleLbl
             // 
@@ -155,6 +143,20 @@
             this.weblinkLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.weblinkLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.weblinkLbl_LinkClicked);
             // 
+            // descriptionTxb
+            // 
+            this.descriptionTxb.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.descriptionTxb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.descriptionTxb.Location = new System.Drawing.Point(3, 95);
+            this.descriptionTxb.Name = "descriptionTxb";
+            this.descriptionTxb.ReadOnly = true;
+            this.descriptionTxb.Size = new System.Drawing.Size(323, 212);
+            this.descriptionTxb.TabIndex = 5;
+            this.descriptionTxb.Text = "";
+            this.descriptionTxb.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.descriptionTxb_LinkClicked);
+            // 
             // logoBox
             // 
             this.logoBox.Image = ((System.Drawing.Image)(resources.GetObject("logoBox.Image")));
@@ -192,12 +194,12 @@
         private System.Windows.Forms.Button okBtn;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayout;
-        private System.Windows.Forms.TextBox descriptionTxb;
         private System.Windows.Forms.Label titleLbl;
         private System.Windows.Forms.Label versionLbl;
         private System.Windows.Forms.Label copyrightLbl;
         private System.Windows.Forms.PictureBox logoBox;
         private System.Windows.Forms.LinkLabel weblinkLbl;
+        private System.Windows.Forms.RichTextBox descriptionTxb;
 
     }
 }
