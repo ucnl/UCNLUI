@@ -117,32 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="latLbl.Text" xml:space="preserve">
-    <value>48.0 N</value>
+  <data name="LonCaptionLbl.Text" xml:space="preserve">
+    <value>Longitude</value>
   </data>
-  <data name="okBtn.Text" xml:space="preserve">
-    <value>OK</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="latLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;salinityCaptionLbl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="searchBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>544, 345</value>
   </data>
   <data name="&gt;&gt;lonLbl.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="LonCaptionLbl.Text" xml:space="preserve">
-    <value>Longitude</value>
+  <data name="&gt;&gt;searchBtn.Name" xml:space="preserve">
+    <value>searchBtn</value>
   </data>
   <data name="&gt;&gt;searchBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lonEdit.Parent" xml:space="preserve">
-    <value>$this</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cancelBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lonEdit.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
@@ -164,21 +162,17 @@
   <data name="&gt;&gt;cancelBtn.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="cancelBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="salinityLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 209</value>
   </data>
   <data name="&gt;&gt;okBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="latLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>344, 41</value>
   </data>
-  <data name="&gt;&gt;searchBtn.Name" xml:space="preserve">
-    <value>searchBtn</value>
-  </data>
   <data name="searchBtn.Text" xml:space="preserve">
-    <value>Search</value>
+    <value>SEARCH</value>
   </data>
   <data name="&gt;&gt;okBtn.Name" xml:space="preserve">
     <value>okBtn</value>
@@ -192,14 +186,14 @@
   <data name="okBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="latLbl.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;latCaptionLbl.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>SalinityDialog</value>
   </data>
   <data name="lonLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>344, 83</value>
-  </data>
-  <data name="searchBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 141</value>
   </data>
   <data name="okBtn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -210,14 +204,17 @@
   <data name="&gt;&gt;salinityCaptionLbl.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;lonEdit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="LonCaptionLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 83</value>
   </data>
   <data name="LonCaptionLbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lonEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 30</value>
+  <data name="searchBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 141</value>
   </data>
   <data name="&gt;&gt;latLbl.Name" xml:space="preserve">
     <value>latLbl</value>
@@ -225,14 +222,17 @@
   <data name="cancelBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 40</value>
   </data>
-  <data name="salinityLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 209</value>
+  <data name="salinityCaptionLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;LonCaptionLbl.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="&gt;&gt;latEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LonCaptionLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lonEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -247,7 +247,7 @@
     <value>Segoe UI, 10.2pt</value>
   </data>
   <data name="cancelBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.2pt, style=Bold</value>
+    <value>Segoe UI, 10.2pt, style=Bold, Underline</value>
   </data>
   <data name="&gt;&gt;latLbl.Parent" xml:space="preserve">
     <value>$this</value>
@@ -273,9 +273,6 @@
   <data name="LonCaptionLbl.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="LonCaptionLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 23</value>
-  </data>
   <data name="&gt;&gt;salinityCaptionLbl.Name" xml:space="preserve">
     <value>salinityCaptionLbl</value>
   </data>
@@ -284,9 +281,6 @@
   </data>
   <data name="&gt;&gt;latCaptionLbl.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="LonCaptionLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
   </data>
   <data name="&gt;&gt;salinityCaptionLbl.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -309,8 +303,8 @@
   <data name="latCaptionLbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;LonCaptionLbl.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="LonCaptionLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lonEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 81</value>
@@ -324,20 +318,20 @@
   <data name="lonLbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 23</value>
   </data>
-  <data name="&gt;&gt;latLbl.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="salinityLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.2pt, style=Bold</value>
   </data>
-  <data name="latCaptionLbl.Text" xml:space="preserve">
-    <value>Latitude</value>
+  <data name="LonCaptionLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 23</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.2pt, style=Bold</value>
   </data>
-  <data name="okBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.2pt, style=Bold</value>
+  <data name="latLbl.Text" xml:space="preserve">
+    <value>48.0 N</value>
   </data>
-  <data name="cancelBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>434, 290</value>
+  <data name="okBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.2pt, style=Bold, Underline</value>
   </data>
   <data name="latCaptionLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 41</value>
@@ -348,17 +342,23 @@
   <data name="salinityLabel.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
+  <data name="cancelBtn.Text" xml:space="preserve">
+    <value>CANCEL</value>
+  </data>
+  <data name="&gt;&gt;LonCaptionLbl.Name" xml:space="preserve">
+    <value>LonCaptionLbl</value>
+  </data>
+  <data name="&gt;&gt;lonEdit.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="&gt;&gt;latEdit.Name" xml:space="preserve">
     <value>latEdit</value>
   </data>
   <data name="latEdit.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="salinityCaptionLbl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="salinityLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.2pt, style=Bold</value>
+  <data name="latCaptionLbl.Text" xml:space="preserve">
+    <value>Latitude</value>
   </data>
   <data name="latLbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 23</value>
@@ -366,8 +366,8 @@
   <data name="latEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 30</value>
   </data>
-  <data name="okBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 290</value>
+  <data name="&gt;&gt;salinityCaptionLbl.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>10, 23</value>
@@ -381,23 +381,17 @@
   <data name="&gt;&gt;okBtn.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="latCaptionLbl.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="okBtn.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="&gt;&gt;latEdit.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LonCaptionLbl.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;latCaptionLbl.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="&gt;&gt;cancelBtn.Name" xml:space="preserve">
     <value>cancelBtn</value>
   </data>
   <data name="salinityLabel.Text" xml:space="preserve">
     <value>no data</value>
-  </data>
-  <data name="&gt;&gt;salinityLabel.Name" xml:space="preserve">
-    <value>salinityLabel</value>
   </data>
   <data name="salinityLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -414,8 +408,8 @@
   <data name="&gt;&gt;searchBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;latEdit.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SalinityDialog</value>
@@ -423,17 +417,17 @@
   <data name="latLbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;lonLbl.Name" xml:space="preserve">
-    <value>lonLbl</value>
+  <data name="cancelBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>434, 290</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>544, 345</value>
+  <data name="lonLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
   <data name="latCaptionLbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 23</value>
   </data>
-  <data name="&gt;&gt;lonEdit.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;latLbl.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="salinityLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -444,8 +438,14 @@
   <data name="&gt;&gt;okBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;latCaptionLbl.Name" xml:space="preserve">
+    <value>latCaptionLbl</value>
+  </data>
+  <data name="cancelBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="searchBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.2pt, style=Bold</value>
+    <value>Segoe UI, 10.2pt, style=Bold, Underline</value>
   </data>
   <data name="salinityCaptionLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 209</value>
@@ -459,32 +459,32 @@
   <data name="latCaptionLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
-  <data name="&gt;&gt;LonCaptionLbl.Name" xml:space="preserve">
-    <value>LonCaptionLbl</value>
+  <data name="&gt;&gt;salinityLabel.Name" xml:space="preserve">
+    <value>salinityLabel</value>
   </data>
   <data name="&gt;&gt;lonLbl.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;LonCaptionLbl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lonLbl.Name" xml:space="preserve">
+    <value>lonLbl</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>SalinityDialog</value>
+  <data name="lonEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 30</value>
   </data>
-  <data name="&gt;&gt;latCaptionLbl.Name" xml:space="preserve">
-    <value>latCaptionLbl</value>
+  <data name="latCaptionLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="lonLbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cancelBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="searchBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="salinityLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 23</value>
   </data>
-  <data name="latEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 39</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
@@ -492,11 +492,11 @@
   <data name="searchBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 40</value>
   </data>
-  <data name="cancelBtn.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="latEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 39</value>
   </data>
-  <data name="lonLbl.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="okBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 290</value>
   </data>
   <data name="LonCaptionLbl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.2pt</value>

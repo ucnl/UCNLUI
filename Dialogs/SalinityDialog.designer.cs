@@ -50,7 +50,6 @@
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // okBtn
             // 
@@ -58,19 +57,16 @@
             this.okBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okBtn.Name = "okBtn";
             this.okBtn.UseVisualStyleBackColor = true;
-            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
             // latCaptionLbl
             // 
             resources.ApplyResources(this.latCaptionLbl, "latCaptionLbl");
             this.latCaptionLbl.Name = "latCaptionLbl";
-            this.latCaptionLbl.Click += new System.EventHandler(this.latCaptionLbl_Click);
             // 
             // LonCaptionLbl
             // 
             resources.ApplyResources(this.LonCaptionLbl, "LonCaptionLbl");
             this.LonCaptionLbl.Name = "LonCaptionLbl";
-            this.LonCaptionLbl.Click += new System.EventHandler(this.LonCaptionLbl_Click);
             // 
             // latEdit
             // 
@@ -132,19 +128,16 @@
             // 
             resources.ApplyResources(this.latLbl, "latLbl");
             this.latLbl.Name = "latLbl";
-            this.latLbl.Click += new System.EventHandler(this.latLbl_Click);
             // 
             // lonLbl
             // 
             resources.ApplyResources(this.lonLbl, "lonLbl");
             this.lonLbl.Name = "lonLbl";
-            this.lonLbl.Click += new System.EventHandler(this.lonLbl_Click);
             // 
             // salinityCaptionLbl
             // 
             resources.ApplyResources(this.salinityCaptionLbl, "salinityCaptionLbl");
             this.salinityCaptionLbl.Name = "salinityCaptionLbl";
-            this.salinityCaptionLbl.Click += new System.EventHandler(this.salinityCaptionLbl_Click);
             // 
             // searchBtn
             // 
@@ -157,7 +150,6 @@
             // 
             resources.ApplyResources(this.salinityLabel, "salinityLabel");
             this.salinityLabel.Name = "salinityLabel";
-            this.salinityLabel.Click += new System.EventHandler(this.salinityLabel_Click);
             // 
             // SalinityDialog
             // 
@@ -176,7 +168,6 @@
             this.Controls.Add(this.okBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SalinityDialog";
-            this.Load += new System.EventHandler(this.SalinityDialog_Load);
             this.Shown += new System.EventHandler(this.SalinityDialog_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.latEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lonEdit)).EndInit();

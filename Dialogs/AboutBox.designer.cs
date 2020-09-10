@@ -47,9 +47,11 @@
             // 
             this.okBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.okBtn.Location = new System.Drawing.Point(485, 334);
+            this.okBtn.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.okBtn.Location = new System.Drawing.Point(647, 514);
+            this.okBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.okBtn.Name = "okBtn";
-            this.okBtn.Size = new System.Drawing.Size(75, 23);
+            this.okBtn.Size = new System.Drawing.Size(101, 35);
             this.okBtn.TabIndex = 0;
             this.okBtn.Text = "OK";
             this.okBtn.UseVisualStyleBackColor = true;
@@ -61,9 +63,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainPanel.Controls.Add(this.tableLayout);
             this.mainPanel.Controls.Add(this.logoBox);
-            this.mainPanel.Location = new System.Drawing.Point(12, 12);
+            this.mainPanel.Location = new System.Drawing.Point(16, 19);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(554, 316);
+            this.mainPanel.Size = new System.Drawing.Size(739, 486);
             this.mainPanel.TabIndex = 1;
             // 
             // tableLayout
@@ -78,25 +81,26 @@
             this.tableLayout.Controls.Add(this.copyrightLbl, 0, 2);
             this.tableLayout.Controls.Add(this.weblinkLbl, 0, 3);
             this.tableLayout.Controls.Add(this.descriptionTxb, 0, 4);
-            this.tableLayout.Location = new System.Drawing.Point(222, 3);
+            this.tableLayout.Location = new System.Drawing.Point(296, 5);
+            this.tableLayout.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tableLayout.Name = "tableLayout";
             this.tableLayout.RowCount = 5;
             this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayout.Size = new System.Drawing.Size(329, 310);
+            this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayout.Size = new System.Drawing.Size(439, 478);
             this.tableLayout.TabIndex = 1;
             // 
             // titleLbl
             // 
             this.titleLbl.AutoSize = true;
             this.titleLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleLbl.Location = new System.Drawing.Point(3, 5);
-            this.titleLbl.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.titleLbl.Location = new System.Drawing.Point(5, 7);
+            this.titleLbl.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(323, 13);
+            this.titleLbl.Size = new System.Drawing.Size(429, 20);
             this.titleLbl.TabIndex = 1;
             this.titleLbl.Text = "Title";
             this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -106,10 +110,10 @@
             // 
             this.versionLbl.AutoSize = true;
             this.versionLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.versionLbl.Location = new System.Drawing.Point(3, 28);
-            this.versionLbl.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.versionLbl.Location = new System.Drawing.Point(5, 41);
+            this.versionLbl.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.versionLbl.Name = "versionLbl";
-            this.versionLbl.Size = new System.Drawing.Size(323, 13);
+            this.versionLbl.Size = new System.Drawing.Size(429, 20);
             this.versionLbl.TabIndex = 2;
             this.versionLbl.Text = "version";
             this.versionLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,10 +123,10 @@
             // 
             this.copyrightLbl.AutoSize = true;
             this.copyrightLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.copyrightLbl.Location = new System.Drawing.Point(3, 51);
-            this.copyrightLbl.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.copyrightLbl.Location = new System.Drawing.Point(5, 75);
+            this.copyrightLbl.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.copyrightLbl.Name = "copyrightLbl";
-            this.copyrightLbl.Size = new System.Drawing.Size(323, 13);
+            this.copyrightLbl.Size = new System.Drawing.Size(429, 20);
             this.copyrightLbl.TabIndex = 3;
             this.copyrightLbl.Text = "Copyrights";
             this.copyrightLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,10 +137,10 @@
             this.weblinkLbl.AutoSize = true;
             this.weblinkLbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.weblinkLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.weblinkLbl.Location = new System.Drawing.Point(3, 74);
-            this.weblinkLbl.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.weblinkLbl.Location = new System.Drawing.Point(5, 109);
+            this.weblinkLbl.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.weblinkLbl.Name = "weblinkLbl";
-            this.weblinkLbl.Size = new System.Drawing.Size(323, 13);
+            this.weblinkLbl.Size = new System.Drawing.Size(429, 20);
             this.weblinkLbl.TabIndex = 4;
             this.weblinkLbl.TabStop = true;
             this.weblinkLbl.Text = "Weblink";
@@ -149,10 +153,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionTxb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.descriptionTxb.Location = new System.Drawing.Point(3, 95);
+            this.descriptionTxb.Location = new System.Drawing.Point(5, 141);
+            this.descriptionTxb.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.descriptionTxb.Name = "descriptionTxb";
             this.descriptionTxb.ReadOnly = true;
-            this.descriptionTxb.Size = new System.Drawing.Size(323, 212);
+            this.descriptionTxb.Size = new System.Drawing.Size(429, 332);
             this.descriptionTxb.TabIndex = 5;
             this.descriptionTxb.Text = "";
             this.descriptionTxb.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.descriptionTxb_LinkClicked);
@@ -160,22 +165,25 @@
             // logoBox
             // 
             this.logoBox.Image = ((System.Drawing.Image)(resources.GetObject("logoBox.Image")));
-            this.logoBox.Location = new System.Drawing.Point(3, 3);
+            this.logoBox.Location = new System.Drawing.Point(5, 5);
+            this.logoBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.logoBox.Name = "logoBox";
-            this.logoBox.Size = new System.Drawing.Size(213, 310);
+            this.logoBox.Size = new System.Drawing.Size(283, 478);
             this.logoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoBox.TabIndex = 0;
             this.logoBox.TabStop = false;
             // 
             // AboutBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(578, 369);
+            this.ClientSize = new System.Drawing.Size(771, 567);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.okBtn);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutBox";

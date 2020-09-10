@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cancelBtn.Text" xml:space="preserve">
-    <value>Отмена</value>
+    <value>ОТМЕНА</value>
   </data>
   <data name="latCaptionLbl.Text" xml:space="preserve">
     <value>Широта</value>
@@ -131,16 +131,13 @@
     <value>Долгота</value>
   </data>
   <data name="salinityCaptionLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 23</value>
+    <value>133, 23</value>
   </data>
   <data name="salinityCaptionLbl.Text" xml:space="preserve">
-    <value>Соленость, ppm</value>
+    <value>Соленость, PSU</value>
   </data>
   <data name="searchBtn.Text" xml:space="preserve">
-    <value>Искать</value>
-  </data>
-  <data name="salinityLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.2pt, style=Bold</value>
+    <value>ИСКАТЬ</value>
   </data>
   <data name="salinityLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 209</value>
