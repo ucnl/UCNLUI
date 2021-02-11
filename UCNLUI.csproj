@@ -56,6 +56,9 @@
     <Reference Include="UCNLSalinity">
       <HintPath>..\..\UCNLSalinity\UCNLSalinity\bin\Release\UCNLSalinity.dll</HintPath>
     </Reference>
+    <Reference Include="uOSM">
+      <HintPath>..\..\uOSM\uOSM\bin\Release\uOSM.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\GeoPlotCartesian.cs">
@@ -88,6 +91,13 @@
     </Compile>
     <Compile Include="Controls\SerialPortSettingsEdit.designer.cs">
       <DependentUpon>SerialPortSettingsEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DrawableTrack.cs" />
+    <Compile Include="Controls\uOSMGeoPlot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\uOSMGeoPlot.Designer.cs">
+      <DependentUpon>uOSMGeoPlot.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Utils.cs" />
     <Compile Include="Dialogs\AboutBox.cs">
@@ -134,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SerialPortSettingsEdit.resx">
       <DependentUpon>SerialPortSettingsEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\uOSMGeoPlot.resx">
+      <DependentUpon>uOSMGeoPlot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
