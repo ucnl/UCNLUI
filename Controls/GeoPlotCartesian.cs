@@ -169,6 +169,26 @@ namespace UCNLUI.Controls
 
         string northSign = "N";
 
+        bool fitByDictionary = false;
+        public bool FitByDictionary
+        {
+            get
+            {
+                return fitByDictionary;
+            }
+            set
+            {
+                if (fitByDictionary != value)
+                {
+                    fitByDictionary = value;
+                    ResetTracksStatistics();
+                    RefreshTrackStatistics();
+                }
+            }
+        }
+
+        List<string> tracksToFit;
+
         #endregion
 
         #region Constructor
@@ -198,6 +218,8 @@ namespace UCNLUI.Controls
 
             coursePen = new Pen(gridColor, 1.0f);
             coursePen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+
+            tracksToFit = new List<string>();
         }
 
         #endregion
@@ -222,6 +244,75 @@ namespace UCNLUI.Controls
             return new PointF(Convert.ToSingle(dLon_m), Convert.ToSingle(dLat_m));
         }
 
+        private void UpdateLegendLabel()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var trk in tracks)
+                sb.AppendFormat("{0}\r\n", trk.Key);
+
+            legendLbl = sb.ToString();
+        }
+
+        private void RefreshTrackStatistics()
+        {
+            double meanLat = 0.0;
+            double meanLon = 0.0;
+            int cnt = 0;
+
+            foreach (var item in tracks)
+            {
+                if (!fitByDictionary || (tracksToFit.Contains(item.Key)))
+                {
+                    var points = item.Value.ToArray();
+                    for (int i = 0; i < points.Length; i++)
+                    {
+                        meanLon += points[i].X;
+                        meanLat += points[i].Y;
+                    }
+
+                    cnt += points.Length;
+                }
+            }
+
+            if (cnt > 0)
+            {
+                meanLon /= cnt;
+                meanLat /= cnt;
+
+                double farestX = 0;
+                double farestY = 0;
+                foreach (var item in tracks)
+                {
+                    if (!fitByDictionary || (tracksToFit.Contains(item.Key)))
+                    {
+                        var points = item.Value.ToArray();
+                        for (int i = 0; i < points.Length; i++)
+                        {
+                            if (Math.Abs(meanLat - points[i].Y) > farestY)
+                                farestY = Math.Abs(meanLat - points[i].Y);
+                            if (Math.Abs(meanLon - points[i].X) > farestX)
+                                farestX = Math.Abs(meanLon - points[i].X);
+                        }
+                    }
+                }
+
+                meanLatDeg = ABFlt(meanLatDeg, Convert.ToSingle(meanLat), 0.8f);
+                meanLonDeg = ABFlt(meanLonDeg, Convert.ToSingle(meanLon), 0.8f);
+
+                farestLatDeltaDeg = ABFlt(farestLatDeltaDeg, Convert.ToSingle(farestY), 0.1f);
+                farestLonDeltaDeg = ABFlt(farestLonDeltaDeg, Convert.ToSingle(farestX), 0.1f);
+            }
+        }
+
+        private void ResetTracksStatistics()
+        {
+            meanLatDeg = float.NaN;
+            meanLonDeg = float.NaN;
+            farestLatDeltaDeg = float.NaN;
+            farestLonDeltaDeg = float.NaN;
+        }
+
         #endregion
 
         public void InitTracks(int trLength)
@@ -243,62 +334,7 @@ namespace UCNLUI.Controls
             course.Add(key, float.NaN);
 
             UpdateLegendLabel();
-        }
-
-        private void UpdateLegendLabel()
-        {
-            StringBuilder sb = new StringBuilder();
-
-            foreach (var trk in tracks)
-                sb.AppendFormat("{0}\r\n", trk.Key);
-
-            legendLbl = sb.ToString();
-        }
-
-        private void RefreshTrackStatistics()
-        {
-            double meanLat = 0.0;
-            double meanLon = 0.0;
-            int cnt = 0;
-
-            foreach (var item in tracks)
-            {
-                var points = item.Value.ToArray();
-                for (int i = 0; i < points.Length; i++)
-                {
-                    meanLon += points[i].X;
-                    meanLat += points[i].Y;
-                }
-
-                cnt += points.Length;
-            }
-
-            meanLon /= cnt;
-            meanLat /= cnt;
-
-
-            /// TODO: find farest point for lat and lon
-            /// 
-            double farestX = 0;
-            double farestY = 0;
-            foreach (var item in tracks)
-            {
-                var points = item.Value.ToArray();
-                for (int i = 0; i < points.Length; i++)
-                {
-                    if (Math.Abs(meanLat- points[i].Y) > farestY)
-                        farestY = Math.Abs(meanLat - points[i].Y);
-                    if (Math.Abs(meanLon - points[i].X) > farestX)
-                        farestX = Math.Abs(meanLon - points[i].X);
-                }
-            }
-
-            meanLatDeg = ABFlt(meanLatDeg, Convert.ToSingle(meanLat), 0.8f);
-            meanLonDeg = ABFlt(meanLonDeg, Convert.ToSingle(meanLon), 0.8f);
-
-            farestLatDeltaDeg = ABFlt(farestLatDeltaDeg, Convert.ToSingle(farestY), 0.1f);
-            farestLonDeltaDeg = ABFlt(farestLonDeltaDeg, Convert.ToSingle(farestX), 0.1f);            
-        }
+        }        
 
         public void UpdateTrack(string tKey, PointF[] pnts)
         {
@@ -334,12 +370,75 @@ namespace UCNLUI.Controls
         {
             foreach (var item in tracks)
                 item.Value.Clear();
+
+            ResetTracksStatistics();
         }
 
         public void AppendHistoryLine(string text)
         {
             history.Add(text.Replace("\r\n", " "));
             historyLines = history.ToArray();
+        }
+
+
+        public bool TracksToFitIsContains(string key)
+        {
+            return tracksToFit.Contains(key);
+        }
+
+        public bool TracksToFitAdd(string key)
+        {
+            if (!tracksToFit.Contains(key))
+            {
+                tracksToFit.Add(key);
+                ResetTracksStatistics();
+                RefreshTrackStatistics();
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool TracksToFitRemove(string key)
+        {
+            if (tracksToFit.Contains(key))
+            {
+                tracksToFit.Remove(key);
+                ResetTracksStatistics();
+                RefreshTrackStatistics();                
+                return true;
+            }
+            else
+            {
+                return false;
+            }            
+        }
+
+        public void TracksToFitClear()
+        {
+            tracksToFit.Clear();
+            ResetTracksStatistics();
+            FitByDictionary = false;
+        }
+
+        public void TracksToFitSet(IEnumerable<string> keys)
+        {
+            tracksToFit.Clear();
+            foreach (var key in keys)
+            {
+                if (!tracksToFit.Contains(key))
+                    tracksToFit.Add(key);
+            }
+            ResetTracksStatistics();
+            RefreshTrackStatistics();
+        }
+
+        public void TracksToFitSet(string key)
+        {
+            tracksToFit.Clear();
+            tracksToFit.Add(key);
+            ResetTracksStatistics();
+            RefreshTrackStatistics();            
         }
 
         #endregion
@@ -389,15 +488,18 @@ namespace UCNLUI.Controls
 
                     foreach (var track in tracks)
                     {
-                        var trkPoints = track.Value.ToArray();
-                        var trkDeltas = new PointF[trkPoints.Length];
-                        deltas.Add(track.Key, trkDeltas);
-                        for (int i = 0; i < trkPoints.Length; i++)
+                        if (!fitByDictionary || (tracksToFit.Contains(track.Key)))
                         {
-                            
-                            trkDeltas[i] = DegToMeters(meanLonDeg, meanLatDeg, trkPoints[i].X, trkPoints[i].Y);
-                            if (Math.Abs(trkDeltas[i].X) > farestXDelta) farestXDelta = Math.Abs(trkDeltas[i].X);
-                            if (Math.Abs(trkDeltas[i].Y) > farestYDelta) farestYDelta = Math.Abs(trkDeltas[i].Y);
+                            var trkPoints = track.Value.ToArray();
+                            var trkDeltas = new PointF[trkPoints.Length];
+                            deltas.Add(track.Key, trkDeltas);
+                            for (int i = 0; i < trkPoints.Length; i++)
+                            {
+
+                                trkDeltas[i] = DegToMeters(meanLonDeg, meanLatDeg, trkPoints[i].X, trkPoints[i].Y);
+                                if (Math.Abs(trkDeltas[i].X) > farestXDelta) farestXDelta = Math.Abs(trkDeltas[i].X);
+                                if (Math.Abs(trkDeltas[i].Y) > farestYDelta) farestYDelta = Math.Abs(trkDeltas[i].Y);
+                            }
                         }
                     }
 
@@ -480,6 +582,14 @@ namespace UCNLUI.Controls
                                                              yToDraw - pSize * 2,
                                                              pSize * 4,
                                                              pSize * 4);
+                                }
+                                else
+                                {
+                                    e.Graphics.DrawRectangle(trackPens[track.Key],
+                                                         xToDraw - pSize,
+                                                         yToDraw - pSize,
+                                                         pSize * 2,
+                                                         pSize * 2);
                                 }
 
                                 if (!float.IsNaN(course[track.Key]))
