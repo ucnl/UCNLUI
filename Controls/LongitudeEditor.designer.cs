@@ -46,33 +46,31 @@
             // 
             this.resultString.AutoSize = true;
             this.resultString.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resultString.Location = new System.Drawing.Point(183, 1);
+            this.resultString.Location = new System.Drawing.Point(242, 1);
             this.resultString.Margin = new System.Windows.Forms.Padding(1);
             this.resultString.Name = "resultString";
-            this.resultString.Size = new System.Drawing.Size(111, 21);
+            this.resultString.Size = new System.Drawing.Size(150, 26);
             this.resultString.TabIndex = 13;
             this.resultString.Text = "/ 179° 59\' 59.99\"  W";
-            this.resultString.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(167, 0);
+            this.label3.Location = new System.Drawing.Point(222, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 23);
+            this.label3.Size = new System.Drawing.Size(19, 28);
             this.label3.TabIndex = 12;
             this.label3.Text = "\"";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // secondsNumericEdit
             // 
             this.secondsNumericEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.secondsNumericEdit.DecimalPlaces = 2;
             this.secondsNumericEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.secondsNumericEdit.Location = new System.Drawing.Point(116, 1);
+            this.secondsNumericEdit.Location = new System.Drawing.Point(154, 1);
             this.secondsNumericEdit.Margin = new System.Windows.Forms.Padding(1);
             this.secondsNumericEdit.Maximum = new decimal(new int[] {
             5999,
@@ -80,7 +78,7 @@
             0,
             131072});
             this.secondsNumericEdit.Name = "secondsNumericEdit";
-            this.secondsNumericEdit.Size = new System.Drawing.Size(50, 20);
+            this.secondsNumericEdit.Size = new System.Drawing.Size(67, 22);
             this.secondsNumericEdit.TabIndex = 11;
             this.secondsNumericEdit.Value = new decimal(new int[] {
             5999,
@@ -94,19 +92,18 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(103, 0);
+            this.label2.Location = new System.Drawing.Point(137, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(12, 23);
+            this.label2.Size = new System.Drawing.Size(16, 28);
             this.label2.TabIndex = 10;
             this.label2.Text = "\'";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // minutesNumericEdit
             // 
             this.minutesNumericEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.minutesNumericEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.minutesNumericEdit.Location = new System.Drawing.Point(62, 1);
+            this.minutesNumericEdit.Location = new System.Drawing.Point(83, 1);
             this.minutesNumericEdit.Margin = new System.Windows.Forms.Padding(1);
             this.minutesNumericEdit.Maximum = new decimal(new int[] {
             59,
@@ -114,7 +111,7 @@
             0,
             0});
             this.minutesNumericEdit.Name = "minutesNumericEdit";
-            this.minutesNumericEdit.Size = new System.Drawing.Size(40, 20);
+            this.minutesNumericEdit.Size = new System.Drawing.Size(53, 22);
             this.minutesNumericEdit.TabIndex = 9;
             this.minutesNumericEdit.Value = new decimal(new int[] {
             59,
@@ -128,13 +125,12 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(47, 0);
+            this.label1.Location = new System.Drawing.Point(62, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(14, 23);
+            this.label1.Size = new System.Drawing.Size(20, 28);
             this.label1.TabIndex = 8;
             this.label1.Text = "°";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // degreeNumericEdit
             // 
@@ -153,7 +149,7 @@
             0,
             -2147483648});
             this.degreeNumericEdit.Name = "degreeNumericEdit";
-            this.degreeNumericEdit.Size = new System.Drawing.Size(45, 20);
+            this.degreeNumericEdit.Size = new System.Drawing.Size(60, 22);
             this.degreeNumericEdit.TabIndex = 7;
             this.degreeNumericEdit.Value = new decimal(new int[] {
             179,
@@ -181,19 +177,21 @@
             this.tableLayout.Controls.Add(this.label2, 3, 0);
             this.tableLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayout.Location = new System.Drawing.Point(0, 0);
+            this.tableLayout.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayout.Name = "tableLayout";
             this.tableLayout.RowCount = 1;
             this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayout.Size = new System.Drawing.Size(295, 23);
+            this.tableLayout.Size = new System.Drawing.Size(393, 28);
             this.tableLayout.TabIndex = 14;
             // 
             // LongitudeEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayout);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LongitudeEditor";
-            this.Size = new System.Drawing.Size(295, 23);
+            this.Size = new System.Drawing.Size(393, 28);
             ((System.ComponentModel.ISupportInitialize)(this.secondsNumericEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutesNumericEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.degreeNumericEdit)).EndInit();

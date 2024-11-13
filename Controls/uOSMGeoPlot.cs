@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using UCNLNav;
 using uOSM;
 
 namespace UCNLUI.Controls
@@ -63,6 +63,9 @@ namespace UCNLUI.Controls
         public bool HistoryVisible { get; set; }
         public Font HistoryTextFont { get; set; }
         public Color HistoryTextColor { get; set; }
+
+        public bool LegendVisible { get; set; }
+        public bool LeftUpperTextVisible { get; set; }
 
         public int historyLinesNumber = 4;
         public int HistoryLinesNumber 
@@ -159,7 +162,7 @@ namespace UCNLUI.Controls
         int tileHeight = DefaultTileHeight;
 
         Color textBackgoundColor = Color.Empty;
-        public Color TextBackgroundColor 
+        public Color TextBackgroundColor
         {
             get { return textBackgoundColor; }
             set
@@ -170,7 +173,54 @@ namespace UCNLUI.Controls
         }
 
         Brush textBackgroundBrush;
-        
+
+
+        #region Right-upper corner text
+
+        public bool RightUpperTextVisible { get; set; }
+
+        AgingValue<string> rightUpperText;
+
+        public void RightUpperTextSet(string text)
+        {
+            rightUpperText.Value = text;
+        }
+
+
+        public Font RightUpperTextFont { get; set; }
+
+        Brush rightUpperTextBrush = new SolidBrush(Color.Black);
+        Color rightUpperTextColor = Color.Black;
+
+        public Color RightUpperTextColor
+        {
+            get { return rightUpperTextColor; }
+            set
+            {
+                rightUpperTextColor = value;
+                rightUpperTextBrush = new SolidBrush(rightUpperTextColor);
+            }
+        }
+
+        #endregion
+
+        #region Right upper Text custom background
+
+        Color rightUpperTextBkColor = Color.Black;
+        public Color RightUpperTextBackgoundColor
+        {
+            get { return rightUpperTextBkColor; }
+            set
+            {
+                rightUpperTextBkColor = value;
+                rightUpperTextBkBrush = new SolidBrush(rightUpperTextBkColor);
+            }
+        }
+
+        Brush rightUpperTextBkBrush = new SolidBrush(Color.Black);
+
+        #endregion
+
         #endregion
 
         #region Constructor
@@ -178,6 +228,8 @@ namespace UCNLUI.Controls
         public uOSMGeoPlot()
         {
             InitializeComponent();
+
+            rightUpperText = new AgingValue<string>(3, 255, x => x);
 
             tracks = new Dictionary<string, DrawableTrack>();
 
@@ -189,6 +241,9 @@ namespace UCNLUI.Controls
 
             if (LeftUpperTextFont == null)
                 LeftUpperTextFont = this.Font;
+
+            if (RightUpperTextFont == null)
+                RightUpperTextFont = this.Font;
 
             if (ScaleLineFont == null)
                 ScaleLineFont = this.Font;
@@ -357,6 +412,11 @@ namespace UCNLUI.Controls
             tProvider = provider;
         }
 
+        public bool IsTrackPresent(string trackName)
+        {
+            return tracks.ContainsKey(trackName);
+        }
+
         public void InitTrack(string trackName, int pointsToShow, Color markerColor, float markerPenWidth, int markerSize, bool isLastPointEnlarged,
             Color courseLineColor, float courseLineWidth, int courseLineLength)
         {
@@ -432,10 +492,10 @@ namespace UCNLUI.Controls
 
         public void SetTracksVisibility(IEnumerable<string> trackNames, bool isVisible)
         {
-            foreach (var track in tracks)
+            /*foreach (var track in tracks)
             {
                 track.Value.Visible = !isVisible;
-            }
+            }*/
 
             foreach (var trackName in trackNames)
             {
@@ -444,13 +504,19 @@ namespace UCNLUI.Controls
             }
         }
 
-
         public void SetTracksVisibility(bool isVisible)
         {
             foreach (var track in tracks)
             {
                 track.Value.Visible = isVisible;
             }
+        }
+
+        private byte Age2Alpha(double age_sec, double obs_int_sec)
+        {
+            double age = age_sec > obs_int_sec ? obs_int_sec : age_sec;
+            int alpha = 5 + Convert.ToInt32(250.0 * (obs_int_sec - age) / obs_int_sec);
+            return Convert.ToByte(alpha);
         }
 
         #endregion
@@ -466,7 +532,9 @@ namespace UCNLUI.Controls
 
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            e.Graphics.TranslateTransform(this.Width / 2.0f, this.Height / 2.0f);            
+            e.Graphics.TranslateTransform(this.Width / 2.0f, this.Height / 2.0f);
+
+            float rd_y = this.Padding.Bottom + this.Padding.Top;
 
             if (drawTracksNum > 0)
             {
@@ -538,22 +606,24 @@ namespace UCNLUI.Controls
                     }
                 }
 
-                legendTotalHeight += this.Padding.Bottom + this.Padding.Top;
-
-                PointF legend_lu = new PointF(this.Width / 2.0f - this.Padding.Left - legendMaxWidth, -this.Height / 2.0f + this.Padding.Top);
-
-                if (textBackgoundColor != Color.Empty)
+                if (LegendVisible)
                 {
-                    e.Graphics.FillRectangle(textBackgroundBrush, legend_lu.X, legend_lu.Y, legendMaxWidth, legendTotalHeight);
-                }
+                    rd_y += legendTotalHeight + this.Padding.Bottom + this.Padding.Top;
+                    legendTotalHeight += this.Padding.Bottom + this.Padding.Top;
 
-                legend_lu.Y += this.Padding.Top;
-                foreach (var track in tracks)
-                {
-                    if (track.Value.Visible)
+                    PointF legend_lu = new PointF(this.Width / 2.0f - this.Padding.Left - legendMaxWidth, -this.Height / 2.0f + this.Padding.Top);
+
+                    if (textBackgoundColor != Color.Empty)
+                        e.Graphics.FillRectangle(textBackgroundBrush, legend_lu.X, legend_lu.Y, legendMaxWidth, legendTotalHeight);
+
+                    legend_lu.Y += this.Padding.Top;
+                    foreach (var track in tracks)
                     {
-                        legend_lu.Y += track.Value.DrawLegend(e.Graphics, track.Key, legend_lu, LegendFont);
+                        if (track.Value.Visible)
+                            legend_lu.Y += track.Value.DrawLegend(e.Graphics, track.Key, legend_lu, LegendFont);
                     }
+
+                    
                 }
 
                 #endregion
@@ -637,7 +707,7 @@ namespace UCNLUI.Controls
 
             #region Draw left upper corner text
 
-            if (!string.IsNullOrEmpty(LeftUpperText))
+            if (LeftUpperTextVisible && !string.IsNullOrEmpty(LeftUpperText))
             {
                 PointF luTextPos = new PointF(-this.Width / 2 + this.Padding.Left, -this.Height / 2 + this.Padding.Top);
                 var luTextSize = e.Graphics.MeasureString(LeftUpperText, LeftUpperTextFont);
@@ -647,6 +717,24 @@ namespace UCNLUI.Controls
                 }
                     
                 e.Graphics.DrawString(LeftUpperText, LeftUpperTextFont, leftUpperTextBrush, luTextPos);
+            }
+
+            #endregion
+
+            #region Draw right upper corner text
+
+            if (RightUpperTextVisible && rightUpperText.IsInitialized)
+            {
+                byte alpha = Age2Alpha(rightUpperText.Age.TotalSeconds, rightUpperText.ObsoleteIntervalSec);
+
+                var str = rightUpperText.ToString();
+                var ruTextSize = e.Graphics.MeasureString(str, RightUpperTextFont);
+                PointF ruTextPos = new PointF(this.Width / 2 - this.Padding.Right - ruTextSize.Width, -this.Height / 2 + rd_y);
+                if (rightUpperTextBkColor != Color.Empty)
+                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(alpha, rightUpperTextBkColor)), ruTextPos.X, ruTextPos.Y, ruTextSize.Width, ruTextSize.Height);
+
+                e.Graphics.DrawString(str, RightUpperTextFont, new SolidBrush(Color.FromArgb(alpha, rightUpperTextColor)), ruTextPos);
+
             }
 
             #endregion
