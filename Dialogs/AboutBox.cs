@@ -83,6 +83,26 @@ namespace UCNLUI.Dialogs
             }
         }
 
+
+        bool isBeringia = false;
+        public bool IsBeringia
+        {
+            get { return isBeringia; }
+            set
+            {
+                isBeringia = value;
+                if (isBeringia)
+                {
+                    logoBox.Image = global::UCNLUI.Properties.Resources.BeringiaLogo;
+                }
+                else
+                {
+                    logoBox.Image = global::UCNLUI.Properties.Resources.UCNLLogo;
+                }
+            }
+
+        }
+
         #endregion
 
         #region Constrcutor

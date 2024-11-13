@@ -81,6 +81,18 @@ namespace UCNLUI.Dialogs
             }
         }
 
+        public string OkBtnCaption
+        {
+            get { return okBtn.Text; }
+            set { okBtn.Text = value; }
+        }
+
+        public string CancelBtnCaption
+        {
+            get { return cancelBtn.Text; }
+            set { cancelBtn.Text = value; }
+        }
+
         public string ErrorConnetingDBMsg { get; set; }
         public string NearestPntMsg { get; set; }
 

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
+            this.components = new System.ComponentModel.Container();
             this.okBtn = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.tableLayout = new System.Windows.Forms.TableLayoutPanel();
@@ -38,6 +38,7 @@
             this.weblinkLbl = new System.Windows.Forms.LinkLabel();
             this.descriptionTxb = new System.Windows.Forms.RichTextBox();
             this.logoBox = new System.Windows.Forms.PictureBox();
+            this.logoList = new System.Windows.Forms.ImageList(this.components);
             this.mainPanel.SuspendLayout();
             this.tableLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
@@ -49,7 +50,7 @@
             this.okBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.okBtn.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.okBtn.Location = new System.Drawing.Point(647, 514);
-            this.okBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.okBtn.Margin = new System.Windows.Forms.Padding(5);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(101, 35);
             this.okBtn.TabIndex = 0;
@@ -64,7 +65,7 @@
             this.mainPanel.Controls.Add(this.tableLayout);
             this.mainPanel.Controls.Add(this.logoBox);
             this.mainPanel.Location = new System.Drawing.Point(16, 19);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(5);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(739, 486);
             this.mainPanel.TabIndex = 1;
@@ -82,7 +83,7 @@
             this.tableLayout.Controls.Add(this.weblinkLbl, 0, 3);
             this.tableLayout.Controls.Add(this.descriptionTxb, 0, 4);
             this.tableLayout.Location = new System.Drawing.Point(296, 5);
-            this.tableLayout.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayout.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayout.Name = "tableLayout";
             this.tableLayout.RowCount = 5;
             this.tableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -100,7 +101,7 @@
             this.titleLbl.Location = new System.Drawing.Point(5, 7);
             this.titleLbl.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(429, 20);
+            this.titleLbl.Size = new System.Drawing.Size(429, 15);
             this.titleLbl.TabIndex = 1;
             this.titleLbl.Text = "Title";
             this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,10 +111,10 @@
             // 
             this.versionLbl.AutoSize = true;
             this.versionLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.versionLbl.Location = new System.Drawing.Point(5, 41);
+            this.versionLbl.Location = new System.Drawing.Point(5, 36);
             this.versionLbl.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.versionLbl.Name = "versionLbl";
-            this.versionLbl.Size = new System.Drawing.Size(429, 20);
+            this.versionLbl.Size = new System.Drawing.Size(429, 15);
             this.versionLbl.TabIndex = 2;
             this.versionLbl.Text = "version";
             this.versionLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,10 +124,10 @@
             // 
             this.copyrightLbl.AutoSize = true;
             this.copyrightLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.copyrightLbl.Location = new System.Drawing.Point(5, 75);
+            this.copyrightLbl.Location = new System.Drawing.Point(5, 65);
             this.copyrightLbl.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.copyrightLbl.Name = "copyrightLbl";
-            this.copyrightLbl.Size = new System.Drawing.Size(429, 20);
+            this.copyrightLbl.Size = new System.Drawing.Size(429, 15);
             this.copyrightLbl.TabIndex = 3;
             this.copyrightLbl.Text = "Copyrights";
             this.copyrightLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -137,10 +138,10 @@
             this.weblinkLbl.AutoSize = true;
             this.weblinkLbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.weblinkLbl.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.weblinkLbl.Location = new System.Drawing.Point(5, 109);
+            this.weblinkLbl.Location = new System.Drawing.Point(5, 94);
             this.weblinkLbl.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.weblinkLbl.Name = "weblinkLbl";
-            this.weblinkLbl.Size = new System.Drawing.Size(429, 20);
+            this.weblinkLbl.Size = new System.Drawing.Size(429, 15);
             this.weblinkLbl.TabIndex = 4;
             this.weblinkLbl.TabStop = true;
             this.weblinkLbl.Text = "Weblink";
@@ -153,29 +154,36 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.descriptionTxb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.descriptionTxb.Location = new System.Drawing.Point(5, 141);
-            this.descriptionTxb.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.descriptionTxb.Location = new System.Drawing.Point(5, 121);
+            this.descriptionTxb.Margin = new System.Windows.Forms.Padding(5);
             this.descriptionTxb.Name = "descriptionTxb";
             this.descriptionTxb.ReadOnly = true;
-            this.descriptionTxb.Size = new System.Drawing.Size(429, 332);
+            this.descriptionTxb.Size = new System.Drawing.Size(429, 352);
             this.descriptionTxb.TabIndex = 5;
             this.descriptionTxb.Text = "";
             this.descriptionTxb.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.descriptionTxb_LinkClicked);
             // 
             // logoBox
             // 
-            this.logoBox.Image = ((System.Drawing.Image)(resources.GetObject("logoBox.Image")));
+
+            this.logoBox.Image = global::UCNLUI.Properties.Resources.UCNLLogo;
             this.logoBox.Location = new System.Drawing.Point(5, 5);
-            this.logoBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.logoBox.Margin = new System.Windows.Forms.Padding(5);
             this.logoBox.Name = "logoBox";
             this.logoBox.Size = new System.Drawing.Size(283, 478);
             this.logoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoBox.TabIndex = 0;
             this.logoBox.TabStop = false;
             // 
+            // logoList
+            // 
+            this.logoList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.logoList.ImageSize = new System.Drawing.Size(16, 16);
+            this.logoList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // AboutBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(771, 567);
@@ -183,7 +191,7 @@
             this.Controls.Add(this.okBtn);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutBox";
@@ -208,6 +216,7 @@
         private System.Windows.Forms.PictureBox logoBox;
         private System.Windows.Forms.LinkLabel weblinkLbl;
         private System.Windows.Forms.RichTextBox descriptionTxb;
+        private System.Windows.Forms.ImageList logoList;
 
     }
 }
