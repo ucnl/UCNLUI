@@ -1,4 +1,4 @@
-namespace UCNLUI.Controls.uPlot
+﻿namespace UCNLUI.Controls.uPlot
 {
     partial class uGeoPlot
     {
